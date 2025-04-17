@@ -3,4 +3,4 @@ Solve scripts, etc for competitive programming
 * USACO
 * Codeforces
 * CSES
-* CCA-PPS Club
+* CCA-PPS Club (Codeforces problems)
