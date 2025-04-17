@@ -1,2 +1,6 @@
-# Programming
-Code for Competitive Programming
+# Competitive Programming
+Solve scripts, etc for competitive programming
+* USACO
+* Codeforces
+* CSES
+* CCA-PPS Club
