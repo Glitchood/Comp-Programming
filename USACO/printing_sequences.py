@@ -1,4 +1,4 @@
-#cpid=1481
+# cpid=1481
 def can_generate_sequence(N, K, sequence):
     # If K is 1, the sequence must consist of only one unique number
     if K == 1:
@@ -6,7 +6,7 @@ def can_generate_sequence(N, K, sequence):
         if len(unique_numbers) > 1:
             return False
         return True
-    
+
     # If K is greater than 1, we need to find repeating patterns
     # We can try to find the smallest repeating unit and see if the sequence can be built using it
     for length in range(1, N + 1):
@@ -21,9 +21,11 @@ def can_generate_sequence(N, K, sequence):
                 return True
     return False
 
+
 def main():
     import sys
-    sys.stdin=open("printing_sequences.in","r")
+
+    sys.stdin = open("printing_sequences.in", "r")
     T = int(input())
     input = sys.stdin.read
     data = input().split()
@@ -34,12 +36,13 @@ def main():
         N = int(data[idx])
         K = int(data[idx + 1])
         idx += 2
-        sequence = list(map(int, data[idx:idx + N]))
+        sequence = list(map(int, data[idx : idx + N]))
         idx += N
         if can_generate_sequence(N, K, sequence):
             print("YES")
         else:
             print("NO")
+
 
 if __name__ == "__main__":
     main()

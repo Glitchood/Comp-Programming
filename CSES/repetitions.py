@@ -1,6 +1,6 @@
-#1069
+# 1069
 s = str(input())
-current = ''
+current = ""
 count = 0
 ans = 0
 for i in range(len(s)):
@@ -8,8 +8,8 @@ for i in range(len(s)):
         current = s[i]
         count = 0
     if s[i] == current:
-        count +=1
+        count += 1
 
-    ans = max(ans,count)
+    ans = max(ans, count)
 
 print(ans)

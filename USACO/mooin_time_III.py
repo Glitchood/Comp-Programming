@@ -1,18 +1,19 @@
 from bisect import bisect_left, bisect_right
 
+
 def main():
     # Read inputs
     N, Q = map(int, input().split())
     s = input().strip()
-    
+
     # Precompute pos: positions where each letter occurs (1-indexed)
     pos = {chr(97 + i): [] for i in range(26)}
     for idx, ch in enumerate(s, start=1):
         pos[ch].append(idx)
-    
+
     # Precompute non: positions where s[i] != letter.
     # Instead of iterating 26 times per character, we can compute for each letter by subtracting.
-    full = list(range(1, N+1))
+    full = list(range(1, N + 1))
     non = {}
     for c in pos:
         # merge difference between full and pos[c]
@@ -47,7 +48,7 @@ def main():
             if pos_i == len(arr_non) or arr_non[pos_i] > r:
                 continue
             candidate_i = arr_non[pos_i]
-            
+
             # For the occurrences of letter c in [l, r]:
             arr_pos = pos[c]
             # We need j and k with j > candidate_i and k in [l, r]
@@ -55,11 +56,11 @@ def main():
             j_left = bisect_left(arr_pos, candidate_i + 1)
             # k must be in [l, r]: get the last occurrence in arr_pos that is <= r.
             j_right = bisect_right(arr_pos, r) - 1
-            
+
             # If not at least 2 occurrences exist or j_left is out of range, skip.
             if j_left > j_right:
                 continue
-            
+
             candidate_k = arr_pos[j_right]  # best candidate for k (largest index)
             # The product is (j - candidate_i) * (candidate_k - j) for a chosen j in arr_pos[j_left:j_right+1].
             # The maximum is achieved when j is as close as possible to the midpoint of candidate_i and candidate_k.
@@ -75,8 +76,9 @@ def main():
                         if val > best:
                             best = val
         out_lines.append(str(best))
-    
+
     print("\n".join(out_lines))
+
 
 if __name__ == "__main__":
     main()

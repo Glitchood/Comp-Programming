@@ -13,10 +13,10 @@ for x in range(1, n + 1):
         if x == y:
             beat[x][y] = False
         else:
-            if c == 'W':
+            if c == "W":
                 beat[x][y] = True
                 beat[y][x] = False
-            elif c == 'L':
+            elif c == "L":
                 beat[x][y] = False
                 beat[y][x] = True
             else:  # 'D'
