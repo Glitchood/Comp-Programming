@@ -1,5 +1,8 @@
 import sys
-sys.stdin=open('test.in','r')
+
+sys.stdin = open("test.in", "r")
+
+
 def intersect(x1, y1, x2, y2, x3, y3, x4, y4):
     x_left = max(x1, x3)
     y_bottom = max(y1, y3)
@@ -9,6 +12,7 @@ def intersect(x1, y1, x2, y2, x3, y3, x4, y4):
         return [x_left, y_bottom, x_right, y_top]
     else:
         return None
+
 
 def area(rect):
     if rect is None:
